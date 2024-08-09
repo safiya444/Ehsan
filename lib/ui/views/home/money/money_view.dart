@@ -85,8 +85,7 @@ class _MoneyViewState extends State<MoneyView> {
                             shrinkWrap: true,
                             itemCount: controller.filtredMoneyPosts.length,
                             itemBuilder: (BuildContext context, int index) {
-                                String formattedDate =
-                                  DateFormat('yyyy-MM-dd – kk:mm').format(timestamp);
+                               
                               return Column(
                                 children: [
                                   CustomPost(
@@ -103,7 +102,7 @@ class _MoneyViewState extends State<MoneyView> {
                                     linkTelegram: controller
                                             .filtredMoneyPosts[index]
                                             .linkTelegram ??
-                                        '', formtedate: formattedDate,
+                                        '', formtedate: controller.filtredMoneyPosts[index].createdAt??''
                                   ),
                                   SizedBox(
                                     height: screenWidth(12),

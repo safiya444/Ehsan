@@ -85,8 +85,7 @@ class _MedicineViewState extends State<MedicineView> {
                             shrinkWrap: true,
                             itemCount: controller.filtredMedicinePosts.length,
                             itemBuilder: (BuildContext context, int index) {
-                               String formattedDate =
-                                  DateFormat('yyyy-MM-dd – kk:mm').format(timestamp);
+                          
                               return Column(
                                 children: [
                                   CustomPost(
@@ -100,7 +99,7 @@ class _MedicineViewState extends State<MedicineView> {
                                     address: controller
                                             .filtredMedicinePosts[index].site ??
                                         '',
-                                    linkTelegram: controller.filtredMedicinePosts[index].linkTelegram??'', formtedate: formattedDate,
+                                    linkTelegram: controller.filtredMedicinePosts[index].linkTelegram??'', formtedate: controller.filtredMedicinePosts[index].createdAt??'',
                                   ),
                                   SizedBox(
                                     height: screenWidth(12),

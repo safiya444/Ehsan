@@ -85,8 +85,7 @@ class _FoodPostViewState extends State<FoodPostView> {
                             shrinkWrap: true,
                             itemCount: controller.filtredFoodPosts.length,
                             itemBuilder: (BuildContext context, int index) {
-                                String formattedDate =
-                                  DateFormat('yyyy-MM-dd – kk:mm').format(timestamp);
+                                
                               return Column(
                                 children: [
                                   CustomPost(
@@ -100,7 +99,7 @@ class _FoodPostViewState extends State<FoodPostView> {
                                     address: controller
                                             .filtredFoodPosts[index].site ??
                                         '',
-                                    linkTelegram: controller.filtredFoodPosts[index].linkTelegram??'', formtedate: formattedDate,
+                                    linkTelegram: controller.filtredFoodPosts[index].linkTelegram??'', formtedate: controller.filtredFoodPosts[index].createdAt??'',
                                   ),
                                   SizedBox(
                                     height: screenWidth(12),

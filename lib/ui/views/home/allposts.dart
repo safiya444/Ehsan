@@ -86,9 +86,7 @@ class _AllPostViewState extends State<AllPostView> {
                             shrinkWrap: true,
                             itemCount: controller.filtredPosts.length,
                             itemBuilder: (BuildContext context, int index) {
-                              String formattedDate =
-                                  DateFormat('yyyy-MM-dd – kk:mm')
-                                      .format(controller1.timestampe);
+                          
                               return Column(
                                 children: [
                                   CustomPost(
@@ -104,7 +102,7 @@ class _AllPostViewState extends State<AllPostView> {
                                     linkTelegram: controller
                                             .filtredPosts[index].linkTelegram ??
                                         '',
-                                    formtedate: formattedDate,
+                                    formtedate: controller.filtredPosts[index].createdAt??'',
                                   ),
                                   SizedBox(
                                     height: screenWidth(12),

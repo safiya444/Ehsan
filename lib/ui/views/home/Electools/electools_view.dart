@@ -20,7 +20,7 @@ class _ElectoolsViewState extends State<ElectoolsView> {
   ElectoolsController controller = Get.put(ElectoolsController());
   @override
   Widget build(BuildContext context) {
-        DateTime timestamp = DateTime.now();
+     
     return Column(
       children: [
         RefreshIndicator(
@@ -85,8 +85,7 @@ class _ElectoolsViewState extends State<ElectoolsView> {
                             shrinkWrap: true,
                             itemCount: controller.filtredElectoolsPosts.length,
                             itemBuilder: (BuildContext context, int index) {
-                                String formattedDate =
-                                  DateFormat('yyyy-MM-dd – kk:mm').format(timestamp);
+                                
                               return Column(
                                 children: [
                                   CustomPost(
@@ -100,7 +99,7 @@ class _ElectoolsViewState extends State<ElectoolsView> {
                                     address: controller
                                             .filtredElectoolsPosts[index].site ??
                                         '',
-                                    linkTelegram: controller.filtredElectoolsPosts[index].linkTelegram??'', formtedate: formattedDate,
+                                    linkTelegram: controller.filtredElectoolsPosts[index].linkTelegram??'', formtedate: controller.filtredElectoolsPosts[index].createdAt??'',
                                   ),
                                   SizedBox(
                                     height: screenWidth(12),

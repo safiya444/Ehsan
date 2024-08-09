@@ -20,7 +20,7 @@ class _HometoolsViewState extends State<HometoolsView> {
   HometoolsController controller = Get.put(HometoolsController());
   @override
   Widget build(BuildContext context) {
-       DateTime timestamp = DateTime.now();
+     
     return  Column(
       children: [
         RefreshIndicator(
@@ -85,8 +85,7 @@ class _HometoolsViewState extends State<HometoolsView> {
                             shrinkWrap: true,
                             itemCount: controller.filtredHometoolsPosts.length,
                             itemBuilder: (BuildContext context, int index) {
-                               String formattedDate =
-                                  DateFormat('yyyy-MM-dd – kk:mm').format(timestamp);
+                             
                               return Column(
                                 children: [
                                   CustomPost(
@@ -100,7 +99,7 @@ class _HometoolsViewState extends State<HometoolsView> {
                                     address: controller
                                             .filtredHometoolsPosts[index].site ??
                                         '',
-                                    linkTelegram: controller.filtredHometoolsPosts[index].linkTelegram??'', formtedate: formattedDate,
+                                    linkTelegram: controller.filtredHometoolsPosts[index].linkTelegram??'', formtedate: controller.filtredHometoolsPosts[index].createdAt??'',
                                   ),
                                   SizedBox(
                                     height: screenWidth(12),

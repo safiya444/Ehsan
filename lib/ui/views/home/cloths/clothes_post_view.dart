@@ -85,8 +85,7 @@ class _ClothesViewState extends State<ClothesView> {
                             shrinkWrap: true,
                             itemCount: controller.filtredClothesPosts.length,
                             itemBuilder: (BuildContext context, int index) {
-                                 String formattedDate =
-                                  DateFormat('yyyy-MM-dd – kk:mm').format(timestamp);
+                                
                               return Column(
                                 children: [
                                   CustomPost(
@@ -100,7 +99,7 @@ class _ClothesViewState extends State<ClothesView> {
                                     address: controller
                                             .filtredClothesPosts[index].site ??
                                         '',
-                                    linkTelegram: controller.filtredClothesPosts[index].linkTelegram??'', formtedate: formattedDate,
+                                    linkTelegram: controller.filtredClothesPosts[index].linkTelegram??'', formtedate: controller.filtredClothesPosts[index].createdAt??'',
                                   ),
                                   SizedBox(
                                     height: screenWidth(12),
