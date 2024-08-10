@@ -29,7 +29,7 @@ class _IntroViewState extends State<IntroView> {
         children: [
           Padding(
             padding: EdgeInsetsDirectional.only(
-                top: screenWidth(3),
+                top: screenWidth(4),
                 start: screenWidth(23),
                 end: screenWidth(23)),
             child: Text(
@@ -48,7 +48,7 @@ class _IntroViewState extends State<IntroView> {
           ),
           Padding(
             padding: EdgeInsetsDirectional.only(
-                end: screenWidth(1.5), top: screenWidth(10)),
+                end: screenWidth(2), top: screenWidth(10)),
             child: InkWell(
               onTap: () {
                 if (index > 0)
@@ -60,7 +60,10 @@ class _IntroViewState extends State<IntroView> {
               },
               child: Text(
                 index > 0 ? 'التالي' : 'الدخول إلى التطبيق',
-                style: TextStyle(fontSize: 25, color: AppColors.GreenApp),
+                style: TextStyle(
+                    fontSize: screenWidth(17),
+                    color: AppColors.blackColor,
+                    fontWeight: FontWeight.bold),
               ),
             ),
           )
