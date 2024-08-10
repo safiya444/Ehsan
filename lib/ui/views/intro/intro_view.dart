@@ -1,4 +1,5 @@
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:empty_code/ui/shared/colors.dart';
 import 'package:empty_code/ui/shared/utils.dart';
 import 'package:empty_code/ui/views/landing/landing_view.dart.dart';
 import 'package:flutter/material.dart';
@@ -13,11 +14,11 @@ class IntroView extends StatefulWidget {
 
 class _IntroViewState extends State<IntroView> {
   List<String> descriptions = [
+    'تم توفير طريقة تواصل آمنة بين المتبرع والمحتاج وهي من خلال اضافة رابط الملف الشخصي للمتبرع في تلجرام',
+    'تستطيع من خلال هذا التطبيق أن تتبرع بجميع أنواع التبرعات لديك من خلال اضافة منشور تشرح فيه عن الشيء المتبرع به',
     'مع تزايد عدد الأشخاص الذين يعانون من الحاجة والفقر في جميع أنحاء العالم، أصبح من الضروري البحث عن طرق جديدة وفعالة لتقديم المساعدة والتبرعات الإنسانية لهؤلاء الأشخاص. يهدف تطبيقنا إلى تسهيل عملية التبرع وتوزيع المساعدات بشكل شفاف وفعال، مما يساهم في تحسين جودة حياة المحتاجين وتلبية احتياجاتهم الأساسية. من خلال هذا التطبيق، نسعى إلى ببناء جسور التواصل بين المتبرعين والمستفيدين، وتشجيع ثقافة العطاء والتكافل الاجتماعي في المجتمع.',
-    'You come into the world with nothing, and the purpose of your life is to make something out of nothing.',
-    'مع تزايد عدد الأشخاص الذين يعانون من الحاجة والفقر في جميع أنحاء العالم، أصبح من الضروري البحث عن طرق جديدة وفعالة لتقديم المساعدة والتبرعات الإنسانية لهؤلاء الأشخاص. يهدف تطبيقنا إلى تسهيل عملية التبرع وتوزيع المساعدات بشكل شفاف وفعال، مما يساهم في تحسين جودة حياة المحتاجين وتلبية احتياجاتهم الأساسية. من خلال هذا التطبيق، نسعى إلى ببناء جسور التواصل بين المتبرعين والمستفيدين، وتشجيع ثقافة العطاء والتكافل الاجتماعي في المجتمع.'
   ];
-  List<String> images = ['new-icon_ehsan', 'new-splash', 'index2'];
+  List<String> images = ['index0', 'index1', 'index2'];
 
   int index = 2;
   @override
@@ -26,27 +27,41 @@ class _IntroViewState extends State<IntroView> {
         child: Scaffold(
       body: Column(
         children: [
-          Text(
-            descriptions[index],
-            style: TextStyle(fontSize: screenWidth(25)),
+          Padding(
+            padding: EdgeInsetsDirectional.only(
+                top: screenWidth(3),
+                start: screenWidth(23),
+                end: screenWidth(23)),
+            child: Text(
+              descriptions[index],
+              style: TextStyle(
+                  fontSize: screenWidth(23), fontWeight: FontWeight.bold),
+            ),
           ),
-          Image.asset('assets/images/pngs/${images[index]}.png'),
+          Image.asset(
+            'assets/images/pngs/${images[index]}.png',
+            width: screenWidth(1.5),
+          ),
           DotsIndicator(
             dotsCount: images.length,
             position: index,
           ),
-          InkWell(
-            onTap: () {
-              if (index > 0)
-                setState(() {
-                  index--;
-                });
-              else
-                Get.off(Landing_View());
-            },
-            child: Text(
-              index > 0 ? 'Next' : 'Finish',
-              style: TextStyle(fontSize: 25),
+          Padding(
+            padding: EdgeInsetsDirectional.only(
+                end: screenWidth(1.5), top: screenWidth(10)),
+            child: InkWell(
+              onTap: () {
+                if (index > 0)
+                  setState(() {
+                    index--;
+                  });
+                else
+                  Get.off(Landing_View());
+              },
+              child: Text(
+                index > 0 ? 'Next' : 'Finish',
+                style: TextStyle(fontSize: 25, color: AppColors.GreenApp),
+              ),
             ),
           )
         ],
