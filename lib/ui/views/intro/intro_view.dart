@@ -59,7 +59,7 @@ class _IntroViewState extends State<IntroView> {
                   Get.off(Landing_View());
               },
               child: Text(
-                index > 0 ? 'Next' : 'Finish',
+                index > 0 ? 'التالي' : 'الدخول إلى التطبيق',
                 style: TextStyle(fontSize: 25, color: AppColors.GreenApp),
               ),
             ),

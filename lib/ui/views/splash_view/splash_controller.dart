@@ -9,10 +9,8 @@ class SplashController extends GetxController {
   @override
   void onInit() {
     Future.delayed(Duration(seconds: 2)).then((value) {
-   
-      storage.getLoggedIn()
-       ? Get.off(MainView())
-       : Get.off(IntroView());
+     // return Get.off(IntroView());
+     storage.getLoggedIn() ? Get.off(MainView()) : Get.off(IntroView());
     });
 
     super.onInit();
